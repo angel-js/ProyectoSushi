@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sushi Fukuse</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+
+    <style>
+        body {
+            background: linear-gradient(to left, rgb(222, 38, 38), rgb(46, 3, 3));
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1em;
+            color: #fff;
+        }
+        @keyframes slide {
+	0% { transform: translateX(0); }
+	10% { transform: translateX(0); }
+
+	15% { transform: translateX(-100%); }
+	30% { transform: translateX(-100%); }
+
+	35% { transform: translateX(-200%); }
+	50% { transform: translateX(-200%); }
+
+	55% { transform: translateX(-300%); }
+	70% { transform: translateX(-300%); }
+
+	75% { transform: translateX(-400%); }
+	90% { transform: translateX(-400%); }
+
+	95% { transform: translateX(-500%); }
+	100% { transform: translateX(-500%); }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+	font-family: sans-serif;
+}
+
+.wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.slider {
+	position: relative;
+}
+
+.slides {
+	position: relative;
+	display: flex;
+	overflow: hidden;
+}
+
+.slide {
+	width: 100vw;
+	flex-shrink: 0;
+	animation-name: slide;
+	animation-duration: 20s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+.slides:hover .slide {
+	animation-play-state: paused;
+}
+
+.slide img {
+	width: 100%;
+	vertical-align: top;
+}
+
+.slide a {
+	width: 100%;
+	display: inline-block;
+	position: relative;
+}
+
+.caption {
+	color: white;
+	text-shadow: 1px 1px black;
+	font-size: 8vw;
+	position: absolute;
+	bottom: 8vw;
+	right: 4vw;
+}
+
+.slide:target {
+	animation-name: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 50;
+}
+
+.slider-controler {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	padding: 5px;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 100;
+}
+
+.slider-controler li {
+	margin: 0 0.5rem;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.slider-controler a {
+	display: inline-block;
+	vertical-align: top;
+	text-decoration: none;
+	color: white;
+	font-size: 1.5rem;
+}
+
+@media only screen and (min-width: 1200px) {
+	.slide {
+		width: 1200px;
+	}
+
+	.caption {
+		font-size: 96px;
+		bottom: 96px;
+		right: 50px;
+	}
+}
+        </style>
+</head>
+<body>
+
+    <!-- NAVBAR-->
+    <nav class="navbar navbar-expand-sm pt-3 pb-3 navbar-dark"  style="background: #0F0E0E;">
+        <div class="container-fluid d-flex">
+            <a class="navbar-brand justify-content-end" href="home.html">Sushi Fusuke</a>
+          <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button> 
+          <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+            <ul class="navbar-nav" >
+              <li class="nav-item d-flex justify-content-center">
+                <a class="nav-link" href="#"></a>
+<!-- Button to Open the Modal -->
+<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#myModal">
+    Iniciar Sesi&oacute;n
+  </button>
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header" style="background: #898989;">
+          <h4 class="modal-title">Iniciar Sesi&oacute;n</h4>
+          <button type="button" class="btn-close"  data-bs-dismiss="modal"></button>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body" style="background: #201f1f;">
+          <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                  <p style="color: rgb(255, 255, 255);">Usuario:</p>
+                </div>
+          </div>  
+            <div class="row justify-content-center">
+                 <div class="col-md-12">
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                 </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 pt-3">
+                  <p style="color: rgb(255, 255, 255);">Contraseña</p>
+                </div>
+          </div>
+              <div class="row">
+                  <div class="col-md-12">
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                  </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-center pt-3">
+                    <button type="submit" class="btn" style="background: #898989;  color: #000">Iniciar Sesi&oacute;n</button>
+                </div>
+          </div>
+          </div>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer" style="background: #201f1f;">
+            <button type="button" style="background: #898989; color: #000" class="btn" data-bs-dismiss="modal">Registrarse</button>
+          </div>
+      </div>
+    </div>
+  </div>
+                <!--Fin modal-->
+              </li>
+            </ul>
+          </div>
+    </div>
+      </nav>  
+    <!-- FIN NAVBAR-->
+    <!--Cuerpo-->
+    <div class="contianer-fluid">
+        <div class="row pt-5">
+            <div class="col-sm-2">
+            </div>
+        <div class="col-sm-8" style="color: #fff;">
+                <h1 class="d-flex justify-content-center">El mejor sushi de Santiago</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Phasellus enim nisi, efficitur vitae consequat sit amet,
+                    aliquet vel mi. Vestibulum semper convallis vestibulum. 
+                    ectetur ex eget metus suscipit, ut condimentum
+                </p> 
+            </div>
+            <div class="col-sm-2">
+            </div>
+    </div>
+    <!--Fin-->
+   <!--Carousel-->
+   <div class="wrapper">
+    <div class="slider" id="slider">
+      <ul class="slides">
+        <li class="slide" id="slide1">
+          <a href="#">
+            <p class="caption">Las mejores promociones</p>
+            <img src="imagenes/sushiC3.jpeg" alt="photo 1">
+          </a>
+        </li>
+        <li class="slide" id="slide2">
+          <a href="#">
+            <p class="caption">Entregas a domicilio</p>
+            <img src="imagenes/sushiC5.jpg" alt="photo 2">
+          </a>
+        </li>
+        <li class="slide" id="slide3">
+          <a href="#">
+            <p class="caption">Sushi al mejor estilo</p>
+            <img src="imagenes/sushiC4.jpg" alt="photo 3">
+          </a>
+        </li>
+        <li class="slide" id="slide4">
+          <a href="#">
+            <p class="caption">Las mejores promociones</p>
+            <img src="imagenes/sushiC6.jpeg" alt="photo 4">
+          </a>
+          </li>
+          <li class="slide" id="slide5">
+            <a href="#">
+              <p class="caption">Sushi al mejor estilo</p>
+              <img src="imagenes/sushiC5.jpg" alt="photo 5">
+            </a>
+          </li>
+          <li class="slide" id="slide6">
+            <a href="#">
+              <p class="caption">Que estas esperando</p>
+              <img src="imagenes/sushiC4.jpg" alt="photo 6">
+            </a>
+          </li>
+      </ul>
+      <ul class="slider-controler">
+        <li><a href="#slide1">&bullet;</a></li>
+        <li><a href="#slide2">&bullet;</a></li>
+        <li><a href="#slide3">&bullet;</a></li>
+        <li><a href="#slide4">&bullet;</a></li>
+        <li><a href="#slide5">&bullet;</a></li>
+      </ul>
+    </div>
+  </div>
+   <!--Carousel fin-->
+    <!--Footer-->
+    <div class="container-fluid" style="background: #0F0E0E;;
+    color: #fff;">
+        <div class="row  d-flex justify-content-center align-items-center">
+            <div class="col-sm-4  justify-content-center align-content-center">
+                <div class="mt-5 ">
+                    <h4 style="color: #fff;">Sushi Fukuse</h4>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <h6 class="mt-3">Cont&aacute;ctanos</h6>
+                <p class="mb-0 mt-3">Instagram: @Fukusesushi</p>
+                <p class="mb-0">Facebook: @Fukuse Sushi Santiago</p>
+                <p class="mb-0">Correo: sushi@fukuse.cl </p>
+            </div>
+            <div class="col-sm-4 mr-0">
+                <div>
+                    <h6 class="mt-3">Con&oacute;cenos</h6>
+                    <p class="mb-0 mt-3">Santiago Centro: Manuel Rodr&iacute;guez 253</p>
+                    <p class="mb-0">Providencia: Manuel Montt 427</p>
+                    <p class="mb-0">Maip&uacute;  Av. 5 de abril 171</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
